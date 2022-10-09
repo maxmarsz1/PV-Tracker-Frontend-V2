@@ -4,7 +4,9 @@ import { ThemeProvider } from "styled-components";
 import GlobalStyles from "./components/styles/Global";
 
 import { Container } from "./components/styles/Container.styled";
+import { DimmedContainer } from "./components/styles/Dimmed.styled";
 import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
 
 
 const mainColors = {
@@ -47,6 +49,8 @@ function App() {
       <GlobalStyles />
       <Container>
         <Navbar darkTheme={darkTheme} toggleTheme={toggleTheme}/>
+        <DimmedContainer/>
+        <Sidebar/>
       </Container>
     </ThemeProvider>
     
