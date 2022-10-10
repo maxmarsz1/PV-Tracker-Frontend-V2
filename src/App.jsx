@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import { ThemeProvider } from "styled-components";
 import GlobalStyles from "./components/styles/Global";
 
@@ -7,6 +9,7 @@ import { Container } from "./components/styles/Container.styled";
 import { DimmedContainer } from "./components/styles/Dimmed.styled";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
+import Home from "./Home";
 
 
 const mainColors = {
@@ -20,22 +23,16 @@ const theme = {
     colors: {
       text: '#6D6D6D',
       background: '#fff',
+      background2: '#fff',
       hover: '#eee'
-    },
-    icons: {
-      hamburger: "burger_light.png",
-      switch: "switch_light.png",
     }
   },
   dark: {
     colors: {
       text: '#FBFBFB',
       background: '#404040',
+      background2: '#636363',
       hover: '#606060'
-    },
-    icons: {
-      hamburger: "burger_dark.png",
-      switch: "switch_dark.png",
     }
   }
 }
@@ -64,6 +61,11 @@ function App() {
             <Sidebar toggleSidebar={toggleSidebar}/>
           </>
         }
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home/>} />
+          </Routes>
+        </Router>
       </Container>
     </ThemeProvider>
     
