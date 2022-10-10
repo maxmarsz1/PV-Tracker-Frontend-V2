@@ -24,5 +24,46 @@ export const DataItem = styled.div`
     background-color: ${({theme}) => theme.colors.background2};
     border-radius: 30px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.16);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
+    .greeting{
+        font-size: 1.6rem;
+        color: ${({theme}) => theme.mainColors.pink};
+    }
+
+    hr{
+        width: 70%;
+        margin: 1rem 0;
+        color: ${({theme}) => theme.mainColors.pink};
+    }
+
+    span{
+        font-size: 20px;
+    }
+
+    .header{
+        font-weight: bold;
+    }
+
+    .info-title{
+        margin: .5rem 0;
+        max-width: 70%;
+        text-align: center;
+    }
+
+    .info-data{
+        color: ${({theme}) => theme.mainColors.blue};
+        font-size: 24px;
+        max-width: 70%;
+        text-align: center;
+    }
+
+    .info-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 `

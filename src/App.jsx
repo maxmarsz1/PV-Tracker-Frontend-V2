@@ -25,7 +25,8 @@ const theme = {
       background: '#fff',
       background2: '#fff',
       hover: '#eee'
-    }
+    },
+    mainColors
   },
   dark: {
     colors: {
@@ -33,7 +34,8 @@ const theme = {
       background: '#404040',
       background2: '#636363',
       hover: '#606060'
-    }
+    },
+    mainColors
   }
 }
 
