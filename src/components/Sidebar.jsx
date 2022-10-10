@@ -1,9 +1,9 @@
 import { SidebarContainer } from "./styles/Sidebar.styled"
 
-const Sidebar = () => {
+const Sidebar = ({toggleSidebar}) => {
   return (
     <SidebarContainer>
-        <div>Powrót</div>
+        <div onClick={toggleSidebar}>Powrót</div>
         <div>Dane</div>
         <div>Ustawienia</div>
         <div>Wyloguj</div>

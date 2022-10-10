@@ -20,6 +20,7 @@ const theme = {
     colors: {
       text: '#6D6D6D',
       background: '#fff',
+      hover: '#eee'
     },
     icons: {
       hamburger: "burger_light.png",
@@ -30,6 +31,7 @@ const theme = {
     colors: {
       text: '#FBFBFB',
       background: '#404040',
+      hover: '#606060'
     },
     icons: {
       hamburger: "burger_dark.png",
@@ -40,17 +42,28 @@ const theme = {
 
 function App() {
   const [darkTheme, setDarkTheme] = useState(false);
+  const [sidebar, setSidebar] = useState(false);
 
   const toggleTheme = () => {
     setDarkTheme(prev => !prev);
   }
+
+  const toggleSidebar = () => {
+    setSidebar(prev => !prev);
+  }
+
   return (
     <ThemeProvider theme={darkTheme ? theme.dark : theme.light}>
       <GlobalStyles />
       <Container>
-        <Navbar darkTheme={darkTheme} toggleTheme={toggleTheme}/>
-        <DimmedContainer/>
-        <Sidebar/>
+        <Navbar darkTheme={darkTheme} toggleTheme={toggleTheme} toggleSidebar={toggleSidebar}/>
+        {
+          sidebar
+          && <>
+            <DimmedContainer onClick={toggleSidebar}/>
+            <Sidebar toggleSidebar={toggleSidebar}/>
+          </>
+        }
       </Container>
     </ThemeProvider>
     

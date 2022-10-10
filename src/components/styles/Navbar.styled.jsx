@@ -8,6 +8,8 @@ export const NavbarContainer = styled.div`
 
     img {
         width: 30px;
+        height: 30px;
+        cursor: pointer;
     }
 
     span {

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const SidebarContainer = styled.div`
     background-color: ${({theme}) => theme.colors.background};
     color: ${({theme}) => theme.colors.text};
-    box-shadow: 0 0 15px black;
+    box-shadow: 0 0 5px black;
     height: 100%;
     width: 300px;
     position: absolute;
@@ -13,6 +13,12 @@ export const SidebarContainer = styled.div`
     div{
         width: 100%;
         padding: 1rem;
-        border-bottom: 1px solid black;
+        cursor: pointer;
+        transition: .3s all ease;
+        user-select: none;
+    }
+
+    div:hover{
+        background-color: ${({theme}) => theme.colors.hover};
     }
 `
