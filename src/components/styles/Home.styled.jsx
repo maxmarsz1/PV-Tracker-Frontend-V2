@@ -1,24 +1,30 @@
 import styled from "styled-components";
 
 export const HomeContainer = styled.div`
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
     width: 100%;
+    max-width: 1880px;
+    max-height: 1000px;
+    margin: 0 auto;
     background-color: ${({theme}) => theme.colors.background};
-    padding: .5rem;
 `
 
 export const DataContainer = styled.div`
-    width: fit-content;
     height: 100%;
-    background-color: ${({theme}) => theme.colors.background};
-    margin: 0 auto;
+    aspect-ratio: 16 / 9;
     display: grid;
-    grid-template-columns: auto auto auto auto;
     gap: 40px;
+    padding: 2rem;
+    margin: 0 auto;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 `
 
 export const DataItem = styled.div`
-    height: ${({big}) => big ? '540px' : '250px'};
-    width: ${({big}) => big ? '1130px' : '350px'};
     grid-column: ${({big}) => big ? '2 / span 3' : ''};
     grid-row: ${({big}) => big ? '1 / span 2' : ''};
     background-color: ${({theme}) => theme.colors.background2};
@@ -48,7 +54,7 @@ export const DataItem = styled.div`
 
     .header{
         font-weight: 400;
-        margin-bottom: 2rem;
+        padding: .5rem;
     }
 
     .info-title{
@@ -68,5 +74,22 @@ export const DataItem = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 100%;
+    }
+
+    .column{
+        flex-direction: column;
+    }
+
+    @media only screen and (max-width: 1600px){
+        .greeting{
+            font-size: 20px;
+        }
+        span{
+            font-size: 16px;
+        }
+        .info-data{
+            font-size: 20px;
+        }
     }
 `

@@ -4,7 +4,9 @@ export const NavbarContainer = styled.div`
     min-width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 1rem 2rem;
+    align-items: center;
+    padding: 0 2rem;
+    height: 60px;
 
     img {
         width: 30px;

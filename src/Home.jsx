@@ -2,7 +2,7 @@ import { useState } from "react";
 import { DataContainer, DataItem, HomeContainer } from "./components/styles/Home.styled"
 import { DarkTheme, LightTheme, mainColors } from "./components/themes/Theme";
 
-import { PieChart, Pie, Cell, BarChart, XAxis, YAxis, Bar, CartesianGrid, Tooltip, Legend } from "recharts";
+import { PieChart, Pie, Cell, BarChart, XAxis, YAxis, Bar, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 
 const Home = ({darkTheme}) => {
     const [date, setDate] = useState(new Date());
@@ -89,11 +89,14 @@ const Home = ({darkTheme}) => {
             <DataItem first={true}>
                 <span className="greeting">Witaj PIayer69</span>
                 <hr />
-                <span className="date">{date.toISOString().slice(0, 10)}</span>
-                <span className="time">{date.toISOString().slice(11, 19)}</span>
+                <div className="info-container column">
+                  <span className="date">{date.toISOString().slice(0, 10)}</span>
+                  <span className="time">{date.toISOString().slice(11, 19)}</span>
+                </div>
             </DataItem>
             <DataItem big={true}>
-                <BarChart data={big_data} width={1000} height={500}>
+              <ResponsiveContainer height="85%" width="90%">
+                <BarChart data={big_data}>
                   <Legend verticalAlign="top" />
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis dataKey="date" stroke={darkTheme ? DarkTheme.colors.text : LightTheme.colors.text}/>
@@ -103,47 +106,60 @@ const Home = ({darkTheme}) => {
                   <Bar dataKey='sent' name="Wysłane (2.8.0)" fill={mainColors.green}/>
                   <Tooltip contentStyle={{backgroundColor: 'rgba(0,0,0,0.8)'}} itemStyle={{backgroundColor: 'rgba(0,0,0,0.8)'}}/>
                 </BarChart>
+              </ResponsiveContainer>
             </DataItem>
             <DataItem>
                 <span className="header">styczeń - czerwiec 2022</span>
-                <span className="info-title">Odłożona energia:</span>
-                <span className="info-data">-168,5 kWh</span>
-                <span className="info-title">Kwota do zapłaty:</span>
-                <span className="info-data">134,80 zł</span>
+                <div className="info-container column">
+                  <span className="info-title">Odłożona energia:</span>
+                  <span className="info-data">-168,5 kWh</span>
+                  <span className="info-title">Kwota do zapłaty:</span>
+                  <span className="info-data">134,80 zł</span>
+                </div>
             </DataItem>
             <DataItem>
-                <span className="info-title">Średnie dzienne zużycie:</span>
-                <span className="info-data">12,3 kWh</span>
-                <span className="info-title">Średnie dzienne zużycie w okresie:</span>
-                <span className="info-data">14,1 kWh</span>
+                <div className="info-container column">
+                  <span className="info-title">Średnie dzienne zużycie:</span>
+                  <span className="info-data">12,3 kWh</span>
+                  <span className="info-title">Średnie dzienne zużycie w okresie:</span>
+                  <span className="info-data">14,1 kWh</span>
+                </div>
             </DataItem>
             <DataItem>
-                <span className="info-title">Procent autokonsumpcji</span>
+                <span className="header">Procent autokonsumpcji</span>
                 <div className="info-container">
-                    <PieChart width={150} height={150}>
+                  <ResponsiveContainer width="45%" aspect={1}>
+                    <PieChart>
                         <Pie dataKey='value' nameKey='name' data={data01} startAngle={270} endAngle={-270} cx='50%' cy='50%'>
                             {data01.map((entry, index) => (
                                 <Cell key={`cell-${index}`} fill={Object.values(mainColors)[index]} />
                             ))}
                         </Pie>
                     </PieChart>
+                  </ResponsiveContainer>
                     <span className="info-data">33%</span>
                 </div>
             </DataItem>
             <DataItem>
+              <span className="header">Oszczędności</span>
+              <div className="info-container column">
                 <span className="info-title">Zaoszczędzone środki:</span>
                 <span className="info-data">5 643,22 zł</span>
                 <span className="info-title">Zaoszczędzone środki w okresie:</span>
                 <span className="info-data">1 908,99 zł</span>
+              </div>
             </DataItem>
             <DataItem>
-                <BarChart data={years_data} width={330} height={150}>
-                    <CartesianGrid strokeDasharray="" />
-                    <XAxis dataKey="name" stroke={darkTheme ? DarkTheme.colors.text : LightTheme.colors.text}/>
-                    <YAxis domain={[.8, 1]} stroke={darkTheme ? DarkTheme.colors.text : LightTheme.colors.text}/>
+              <span className="header">Wydajność instalacji</span>
+              <ResponsiveContainer height="80%" width="80%">
+                <BarChart data={years_data} margin={{left: -25}}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" fontSize={12} stroke={darkTheme ? DarkTheme.colors.text : LightTheme.colors.text}/>
+                    <YAxis domain={[.8, 1]} fontSize={12} stroke={darkTheme ? DarkTheme.colors.text : LightTheme.colors.text}/>
                     <Bar dataKey='uv'  fill={mainColors.pink}/>
                     <Tooltip/>
                 </BarChart>
+              </ResponsiveContainer>
             </DataItem>
         </DataContainer>
     </HomeContainer>
