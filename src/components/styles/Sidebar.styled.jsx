@@ -9,6 +9,7 @@ export const SidebarContainer = styled.div`
     position: absolute;
     left: 0;
     top: 0;
+    z-index: 2;
     
     div{
         width: 100%;

@@ -28,9 +28,11 @@ export const DataItem = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    font-weight: 100;
 
     .greeting{
         font-size: 1.6rem;
+        text-shadow: 1px 1px 5px ${({theme}) => theme.colors.background};
         color: ${({theme}) => theme.mainColors.pink};
     }
 
@@ -45,7 +47,8 @@ export const DataItem = styled.div`
     }
 
     .header{
-        font-weight: bold;
+        font-weight: 400;
+        margin-bottom: 2rem;
     }
 
     .info-title{

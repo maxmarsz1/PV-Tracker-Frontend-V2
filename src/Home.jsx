@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { DataContainer, DataItem, HomeContainer } from "./components/styles/Home.styled"
+import { DarkTheme, LightTheme, mainColors } from "./components/themes/Theme";
 
-import { PieChart, Pie, Cell, BarChart, XAxis, YAxis, Bar, CartesianGrid, Tooltip } from "recharts";
+import { PieChart, Pie, Cell, BarChart, XAxis, YAxis, Bar, CartesianGrid, Tooltip, Legend } from "recharts";
 
-const Home = () => {
+const Home = ({darkTheme}) => {
     const [date, setDate] = useState(new Date());
     setTimeout(() => {
         setDate(new Date());
     }, 1000)
+
     const data01 = [
         {
           "name": "Group A",
@@ -42,11 +44,44 @@ const Home = () => {
         }
       ];
 
-    const colors = [
-        '#56E7C1',
-        '#4F9CFE',
-        '#F054AA'
-    ];
+      const big_data = [
+        {
+          "date": "2017",
+          "produced": 134,
+          "received": 132,
+          "sent": 80
+        },
+        {
+          "date": "2018",
+          "produced": 342,
+          "received": 142,
+          "sent": 156
+        },
+        {
+          "date": "2019",
+          "produced": 456,
+          "received": 89,
+          "sent": 234
+        },
+        {
+          "date": "2020",
+          "produced": 809,
+          "received": 154,
+          "sent": 325
+        },
+        {
+          "date": "2021",
+          "produced": 789,
+          "received": 213,
+          "sent": 233
+        },
+        {
+          "date": "2022",
+          "produced": 1209,
+          "received": 156,
+          "sent": 455
+        }
+      ];
 
   return (
     <HomeContainer>
@@ -58,6 +93,16 @@ const Home = () => {
                 <span className="time">{date.toISOString().slice(11, 19)}</span>
             </DataItem>
             <DataItem big={true}>
+                <BarChart data={big_data} width={1000} height={500}>
+                  <Legend verticalAlign="top" />
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="date" stroke={darkTheme ? DarkTheme.colors.text : LightTheme.colors.text}/>
+                  <YAxis stroke={darkTheme ? DarkTheme.colors.text : LightTheme.colors.text}/>
+                  <Bar dataKey='produced' name="Produkcja" fill={mainColors.pink}/>
+                  <Bar dataKey='received' name="Pobrane (1.8.0)" fill={mainColors.blue}/>
+                  <Bar dataKey='sent' name="Wysłane (2.8.0)" fill={mainColors.green}/>
+                  <Tooltip contentStyle={{backgroundColor: 'rgba(0,0,0,0.8)'}} itemStyle={{backgroundColor: 'rgba(0,0,0,0.8)'}}/>
+                </BarChart>
             </DataItem>
             <DataItem>
                 <span className="header">styczeń - czerwiec 2022</span>
@@ -78,7 +123,7 @@ const Home = () => {
                     <PieChart width={150} height={150}>
                         <Pie dataKey='value' nameKey='name' data={data01} startAngle={270} endAngle={-270} cx='50%' cy='50%'>
                             {data01.map((entry, index) => (
-                                <Cell key={`cell-${index}`} fill={colors[index]} />
+                                <Cell key={`cell-${index}`} fill={Object.values(mainColors)[index]} />
                             ))}
                         </Pie>
                     </PieChart>
@@ -94,9 +139,9 @@ const Home = () => {
             <DataItem>
                 <BarChart data={years_data} width={330} height={150}>
                     <CartesianGrid strokeDasharray="" />
-                    <XAxis dataKey="name" />
-                    <YAxis />
-                    <Bar dataKey='uv'  fill={colors[2]}/>
+                    <XAxis dataKey="name" stroke={darkTheme ? DarkTheme.colors.text : LightTheme.colors.text}/>
+                    <YAxis domain={[.8, 1]} stroke={darkTheme ? DarkTheme.colors.text : LightTheme.colors.text}/>
+                    <Bar dataKey='uv'  fill={mainColors.pink}/>
                     <Tooltip/>
                 </BarChart>
             </DataItem>

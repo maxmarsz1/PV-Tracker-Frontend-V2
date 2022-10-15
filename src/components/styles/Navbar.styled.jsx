@@ -14,5 +14,7 @@ export const NavbarContainer = styled.div`
 
     span {
         font-size: 1.4rem;
+        font-weight: 100;
+        letter-spacing: 4px;
     }
 `

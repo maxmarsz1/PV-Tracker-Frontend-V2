@@ -10,34 +10,8 @@ import { DimmedContainer } from "./components/styles/Dimmed.styled";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Home from "./Home";
+import { LightTheme, DarkTheme } from "./components/themes/Theme";
 
-
-const mainColors = {
-  blue: '#4F9CFE',
-  green: '#56E7C1',
-  pink: '#F054AA'
-}
-
-const theme = {
-  light: {
-    colors: {
-      text: '#6D6D6D',
-      background: '#fff',
-      background2: '#fff',
-      hover: '#eee'
-    },
-    mainColors
-  },
-  dark: {
-    colors: {
-      text: '#FBFBFB',
-      background: '#404040',
-      background2: '#636363',
-      hover: '#606060'
-    },
-    mainColors
-  }
-}
 
 function App() {
   const [darkTheme, setDarkTheme] = useState(false);
@@ -52,7 +26,7 @@ function App() {
   }
 
   return (
-    <ThemeProvider theme={darkTheme ? theme.dark : theme.light}>
+    <ThemeProvider theme={darkTheme ? DarkTheme : LightTheme}>
       <GlobalStyles />
       <Container>
         <Navbar darkTheme={darkTheme} toggleTheme={toggleTheme} toggleSidebar={toggleSidebar}/>
@@ -65,7 +39,7 @@ function App() {
         }
         <Router>
           <Routes>
-            <Route path="/" element={<Home/>} />
+            <Route path="/" element={<Home darkTheme={darkTheme}/>} />
           </Routes>
         </Router>
       </Container>
