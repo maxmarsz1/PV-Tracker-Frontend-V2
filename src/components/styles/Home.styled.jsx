@@ -17,8 +17,8 @@ export const DataContainer = styled.div`
     height: 100%;
     aspect-ratio: 16 / 9;
     display: grid;
-    gap: 40px;
-    padding: 2rem;
+    gap: 25px;
+    padding: 0 2rem 2rem 2rem;
     margin: 0 auto;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;

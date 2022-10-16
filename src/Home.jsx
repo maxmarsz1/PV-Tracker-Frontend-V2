@@ -96,7 +96,7 @@ const Home = ({darkTheme}) => {
             </DataItem>
             <DataItem big={true}>
               <ResponsiveContainer height="85%" width="90%">
-                <BarChart data={big_data}>
+                <BarChart data={big_data} margin={{left: -15}}>
                   <Legend verticalAlign="top" />
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis dataKey="date" stroke={darkTheme ? DarkTheme.colors.text : LightTheme.colors.text}/>
