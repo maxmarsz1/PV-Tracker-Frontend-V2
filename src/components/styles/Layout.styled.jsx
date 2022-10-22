@@ -22,11 +22,13 @@ export const DataContainer = styled.div`
     margin: 0 auto;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    .pointer{
+        cursor: pointer;
+    }
 `
 
 export const DataItem = styled.div`
-    grid-column: ${({big}) => big ? '2 / span 3' : ''};
-    grid-row: ${({big}) => big ? '1 / span 2' : ''};
     background-color: ${({theme}) => theme.colors.background2};
     border-radius: 30px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.16);
@@ -35,6 +37,15 @@ export const DataItem = styled.div`
     align-items: center;
     flex-direction: column;
     font-weight: 100;
+
+    img{
+        height: 80px;
+        margin-bottom: 1rem;
+    }
+
+    .menu-title{
+        font-size: 20px;
+    }
 
     .greeting{
         font-size: 1.6rem;
@@ -92,4 +103,14 @@ export const DataItem = styled.div`
             font-size: 20px;
         }
     }
+`
+
+export const DataItemBigMenu = styled(DataItem)`
+    grid-column: 2 / span 3;
+    grid-row: 1 / span 2;
+`
+
+export const DataItemBig = styled(DataItem)`
+    grid-column: 2 / span 3;
+    grid-row: 1 / span 3;
 `

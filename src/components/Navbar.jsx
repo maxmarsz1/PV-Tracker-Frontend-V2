@@ -4,6 +4,7 @@ import BurgerLight from './assets/icons/burger_light.png';
 import SwitchDark from './assets/icons/switch_dark.png';
 import SwitchLight from './assets/icons/switch_light.png';
 
+
 const Navbar = ({darkTheme, toggleTheme, toggleSidebar}) => {
   return (
     <NavbarContainer>

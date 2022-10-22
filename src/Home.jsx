@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { DataContainer, DataItem, HomeContainer } from "./components/styles/Home.styled"
+import { DataContainer, DataItem, HomeContainer, DataItemBigMenu } from "./components/styles/Layout.styled"
 import { DarkTheme, LightTheme, mainColors } from "./components/themes/Theme";
 
 import { PieChart, Pie, Cell, BarChart, XAxis, YAxis, Bar, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
@@ -94,7 +94,7 @@ const Home = ({darkTheme}) => {
                   <span className="time">{date.toISOString().slice(11, 19)}</span>
                 </div>
             </DataItem>
-            <DataItem big={true}>
+            <DataItemBigMenu>
               <ResponsiveContainer height="85%" width="90%">
                 <BarChart data={big_data} margin={{left: -15}}>
                   <Legend verticalAlign="top" />
@@ -107,7 +107,7 @@ const Home = ({darkTheme}) => {
                   <Tooltip contentStyle={{backgroundColor: 'rgba(0,0,0,0.8)'}} itemStyle={{backgroundColor: 'rgba(0,0,0,0.8)'}}/>
                 </BarChart>
               </ResponsiveContainer>
-            </DataItem>
+            </DataItemBigMenu>
             <DataItem>
                 <span className="header">styczeń - czerwiec 2022</span>
                 <div className="info-container column">

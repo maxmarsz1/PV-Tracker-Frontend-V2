@@ -10,7 +10,9 @@ import { DimmedContainer } from "./components/styles/Dimmed.styled";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Home from "./Home";
+import Settings from "./MainMenu";
 import { LightTheme, DarkTheme } from "./components/themes/Theme";
+import MainMenu from "./MainMenu";
 
 
 function App() {
@@ -29,17 +31,20 @@ function App() {
     <ThemeProvider theme={darkTheme ? DarkTheme : LightTheme}>
       <GlobalStyles />
       <Container>
-        <Navbar darkTheme={darkTheme} toggleTheme={toggleTheme} toggleSidebar={toggleSidebar}/>
-        {
-          sidebar
-          && <>
-            <DimmedContainer onClick={toggleSidebar}/>
-            <Sidebar toggleSidebar={toggleSidebar}/>
-          </>
-        }
         <Router>
+          <Navbar darkTheme={darkTheme} toggleTheme={toggleTheme} toggleSidebar={toggleSidebar}/>
+          {
+            sidebar
+            && <>
+              <DimmedContainer onClick={toggleSidebar}/>
+              <Sidebar toggleSidebar={toggleSidebar}/>
+            </>
+          }
           <Routes>
             <Route path="/" element={<Home darkTheme={darkTheme}/>} />
+            <Route path="/menu/:page" element={<MainMenu darkTheme={darkTheme}/>}>
+
+            </Route>
           </Routes>
         </Router>
       </Container>
