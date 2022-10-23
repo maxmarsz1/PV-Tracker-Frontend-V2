@@ -31,12 +31,12 @@ const MainMenu = ({darkTheme}) => {
                 <span className="menu-title">Ustawienia</span>
             </MenuButton>
             <MenuButton onClick={() => navigate('/menu/info')}>
-                <img src={darkTheme ? InfoDark : InfoLight} alt="arrow"/>
+                <img src={darkTheme ? InfoDark : InfoLight} alt="info"/>
                 <span className="menu-title">Informacje</span>
             </MenuButton>
             <DataItemBig>
                 {
-                 pages[page]   
+                 pages[page] ? pages[page] : <Data />
                 }
             </DataItemBig>
         </DataContainer>
