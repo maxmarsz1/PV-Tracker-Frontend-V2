@@ -22,10 +22,6 @@ export const DataContainer = styled.div`
     margin: 0 auto;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-
-    .pointer{
-        cursor: pointer;
-    }
 `
 
 export const DataItem = styled.div`
@@ -37,15 +33,7 @@ export const DataItem = styled.div`
     align-items: center;
     flex-direction: column;
     font-weight: 100;
-
-    img{
-        height: 80px;
-        margin-bottom: 1rem;
-    }
-
-    .menu-title{
-        font-size: 20px;
-    }
+    transition: .3s background ease;
 
     .greeting{
         font-size: 1.6rem;
@@ -102,6 +90,24 @@ export const DataItem = styled.div`
         .info-data{
             font-size: 20px;
         }
+    }
+`
+
+export const MenuButton = styled(DataItem)`
+    cursor: pointer;
+    position: relative;
+
+    &:hover{
+       background: ${({theme}) => theme.colors.menuHover};
+    }
+
+    img{
+        height: 80px;
+        margin-bottom: 1rem;
+    }
+
+    .menu-title{
+        font-size: 20px;
     }
 `
 

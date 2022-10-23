@@ -18,5 +18,7 @@ export const NavbarContainer = styled.div`
         font-size: 1.4rem;
         font-weight: 100;
         letter-spacing: 4px;
+        cursor: pointer;
+        user-select: none;
     }
 `

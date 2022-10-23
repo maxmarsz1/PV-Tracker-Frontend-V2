@@ -10,6 +10,7 @@ const Sidebar = ({toggleSidebar}) => {
         <div onClick={() => {navigate("/"); toggleSidebar()}}>Strona główna</div>
         <div onClick={() => {navigate("/menu/data"); toggleSidebar()}}>Dane</div>
         <div onClick={() => {navigate("/menu/settings"); toggleSidebar()}}>Ustawienia</div>
+        <div onClick={() => {navigate("/menu/info"); toggleSidebar()}}>Informacje</div>
         <div>Wyloguj</div>
     </SidebarContainer>
   )
