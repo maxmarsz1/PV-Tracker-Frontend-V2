@@ -120,3 +120,8 @@ export const DataItemBig = styled(DataItem)`
     grid-column: 2 / span 3;
     grid-row: 1 / span 3;
 `
+
+export const DataItemHuge = styled(DataItem)`
+    grid-column: 1 / span 4;
+    grid-row: 1 / span 3;
+`

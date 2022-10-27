@@ -10,7 +10,9 @@ import { DimmedContainer } from "./components/styles/Dimmed.styled";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Home from "./Home";
-import MainMenu from "./MainMenu";
+import Data from "./Data";
+import Settings from "./Settings";
+import Info from "./Info";
 import { LightTheme, DarkTheme } from "./components/themes/Theme";
 
 
@@ -45,10 +47,9 @@ function App() {
           }
           <Routes>
             <Route path="/" element={<Home darkTheme={darkTheme}/>} />
-            <Route path="/menu/">
-              <Route path="" element={<MainMenu darkTheme={darkTheme}/>}/>
-              <Route path=":page" element={<MainMenu darkTheme={darkTheme}/>}/>
-            </Route>
+            <Route path="/data" element={<Data darkTheme={darkTheme}/>} />
+            <Route path="/settings" element={<Settings darkTheme={darkTheme}/>} />
+            <Route path="/info" element={<Info darkTheme={darkTheme}/>} />
           </Routes>
         </Router>
       </Container>

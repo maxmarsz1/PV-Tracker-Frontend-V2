@@ -10,9 +10,17 @@ const Navbar = ({darkTheme, toggleTheme, toggleSidebar}) => {
   let navigate = useNavigate();
   return (
     <NavbarContainer>
-        <img src={darkTheme ? BurgerDark : BurgerLight} onClick={toggleSidebar} alt="burger" />
-        <span onClick={() => navigate('/')}>PVTracker</span>
-        <img src={darkTheme ? SwitchDark : SwitchLight} onClick={toggleTheme} alt="switch" />
+        <img className="burger-menu" src={darkTheme ? BurgerDark : BurgerLight} onClick={toggleSidebar} alt="burger" />
+        <span className="logo" onClick={() => navigate('/')}>PVTracker</span>
+        <span className="links">
+          <ul>
+            <li onClick={() => navigate('/')}>Strona Główna</li>
+            <li onClick={() => navigate('/data')}>Dane</li>
+            <li onClick={() => navigate('/settings')}>Ustawienia</li>
+            <li onClick={() => navigate('/info')}>Info</li>
+          </ul>
+          <img src={darkTheme ? SwitchDark : SwitchLight} onClick={toggleTheme} alt="switch" />
+        </span>
     </NavbarContainer>
   )
 }

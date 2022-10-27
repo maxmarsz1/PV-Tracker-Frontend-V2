@@ -9,7 +9,7 @@ export const LightTheme = {
         text: '#6D6D6D',
         background: '#fff',
         background2: '#fff',
-        hover: '#eee',
+        hover: '#d4d4d4',
         menuHover: "linear-gradient(336deg, rgba(255,255,255,1) 0%, rgba(194,194,194,1) 56%, rgba(255,255,255,1) 100%);"
     },
     mainColors
