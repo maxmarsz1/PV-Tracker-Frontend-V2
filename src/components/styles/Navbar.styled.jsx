@@ -20,7 +20,6 @@ export const NavbarContainer = styled.div`
 
     .links{
         display: flex;
-
     }
 
     .links ul{
