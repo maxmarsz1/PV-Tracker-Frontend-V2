@@ -11,8 +11,9 @@ const GlobalStyles = createGlobalStyle`
 
     html, body, #root {
         height: 100vh;
-        background-color: ${({theme}) => theme.colors.background};
+        scroll-snap-type: y mandatory;
+        background-color: ${({ theme }) => theme.colors.background};
     }
-`
+`;
 
 export default GlobalStyles;
