@@ -1,86 +1,93 @@
 import { DataContainer, DataItemHuge, HomeContainer } from './components/styles/Layout.styled'
-import { DataWrapper } from './components/styles/DataLayout.styled'
+import { DataLegend, DataWrapper } from './components/styles/DataLayout.styled'
 import DataInfoItem from './components/DataInfoItem'
 
 const Data = ({darkTheme}) => {
   const data = [
     {
       date: 1,
-      produced: 124,
-      received: 123,
-      sent: 123
+      produced: Math.floor(Math.random()*1000),
+      received: Math.floor(Math.random()*1000),
+      sent: Math.floor(Math.random()*1000)
     },
     {
       date: 2,
-      produced: 123,
-      received: 123,
-      sent: 123
+      produced: Math.floor(Math.random()*1000),
+      received: Math.floor(Math.random()*1000),
+      sent: Math.floor(Math.random()*1000)
     },
     {
       date: 3,
-      produced: 123,
-      received: 123,
-      sent: 123
+      produced: Math.floor(Math.random()*1000),
+      received: Math.floor(Math.random()*1000),
+      sent: Math.floor(Math.random()*1000)
     },
     {
       date: 4,
-      produced: 123,
-      received: 123,
-      sent: 123
+      produced: Math.floor(Math.random()*1000),
+      received: Math.floor(Math.random()*1000),
+      sent: Math.floor(Math.random()*1000)
     },
     {
       date: 5,
-      produced: 123,
-      received: 123,
-      sent: 123
+      produced: Math.floor(Math.random()*1000),
+      received: Math.floor(Math.random()*1000),
+      sent: Math.floor(Math.random()*1000)
     },
     {
       date: 6,
-      produced: 123,
-      received: 123,
-      sent: 123
+      produced: Math.floor(Math.random()*1000),
+      received: Math.floor(Math.random()*1000),
+      sent: Math.floor(Math.random()*1000)
     },
     {
       date: 7,
-      produced: 123,
-      received: 123,
-      sent: 123
+      produced: Math.floor(Math.random()*1000),
+      received: Math.floor(Math.random()*1000),
+      sent: Math.floor(Math.random()*1000)
     },
     {
       date: 8,
-      produced: 123,
-      received: 123,
-      sent: 123
+      produced: Math.floor(Math.random()*1000),
+      received: Math.floor(Math.random()*1000),
+      sent: Math.floor(Math.random()*1000)
     },
     {
       date: 9,
-      produced: 123,
-      received: 234,
-      sent: 69
+      produced: Math.floor(Math.random()*1000),
+      received: Math.floor(Math.random()*1000),
+      sent: Math.floor(Math.random()*1000)
     },
     {
       date: 10,
-      produced: 123,
-      received: 123,
-      sent: 123
+      produced: Math.floor(Math.random()*1000),
+      received: Math.floor(Math.random()*1000),
+      sent: Math.floor(Math.random()*1000)
     },
     {
       date: 11,
-      produced: 123,
-      received: 123,
-      sent: 123
+      produced: Math.floor(Math.random()*1000),
+      received: Math.floor(Math.random()*1000),
+      sent: Math.floor(Math.random()*1000)
     },
     {
       date: 12,
-      produced: 123,
-      received: 123,
-      sent: 123
+      produced: Math.floor(Math.random()*1000),
+      received: Math.floor(Math.random()*1000),
+      sent: Math.floor(Math.random()*1000)
     },
   ]
   return (
     <HomeContainer>
       <DataContainer>
         <DataItemHuge>
+          {/* <DataLegend>
+            <ul>
+              <li>Produkcja</li>
+              <li>Pobrane</li>
+              <li>Wysłane</li>
+            </ul>
+          </DataLegend> */}
           <DataWrapper>
             {
               data.map(item => <DataInfoItem key={item.date} darkTheme={darkTheme} data={item}/>)

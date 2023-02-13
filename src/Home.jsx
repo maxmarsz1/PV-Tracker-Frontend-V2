@@ -24,59 +24,59 @@ const Home = ({darkTheme}) => {
     const years_data = [
         {
           "name": "2017",
-          "uv": 0.98
+          "uv": 98
         },
         {
           "name": "2018",
-          "uv": 0.95
+          "uv": 95
         },
         {
           "name": "2019",
-          "uv": 0.91
+          "uv": 91
         },
         {
           "name": "2020",
-          "uv": 0.93
+          "uv": 93
         },
         {
           "name": "2021",
-          "uv": 0.89
+          "uv": 89
         }
       ];
 
       const big_data = [
         {
-          "date": "2017",
+          "date": "styczen",
           "produced": 134,
           "received": 132,
           "sent": 80
         },
         {
-          "date": "2018",
+          "date": "luty",
           "produced": 342,
           "received": 142,
           "sent": 156
         },
         {
-          "date": "2019",
+          "date": "marzec",
           "produced": 456,
           "received": 89,
           "sent": 234
         },
         {
-          "date": "2020",
+          "date": "kwiecień",
           "produced": 809,
           "received": 154,
           "sent": 325
         },
         {
-          "date": "2021",
+          "date": "maj",
           "produced": 789,
           "received": 213,
           "sent": 233
         },
         {
-          "date": "2022",
+          "date": "czerwiec",
           "produced": 1209,
           "received": 156,
           "sent": 455
@@ -86,7 +86,7 @@ const Home = ({darkTheme}) => {
   return (
     <HomeContainer>
         <DataContainer>
-            <DataItem first={true}>
+            <DataItem>
                 <span className="greeting">Witaj PIayer69</span>
                 <hr />
                 <div className="info-container column">
@@ -96,15 +96,32 @@ const Home = ({darkTheme}) => {
             </DataItem>
             <DataItemBigMenu>
               <ResponsiveContainer height="85%" width="90%">
-                <BarChart data={big_data} margin={{left: -15}}>
-                  <Legend verticalAlign="top" />
+                <BarChart data={big_data}>
+                  {/* <Legend verticalAlign="top" /> */}
                   <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="date" stroke={darkTheme ? DarkTheme.colors.text : LightTheme.colors.text}/>
-                  <YAxis stroke={darkTheme ? DarkTheme.colors.text : LightTheme.colors.text}/>
+                  <XAxis 
+                    dataKey="date" 
+                    stroke={darkTheme ? DarkTheme.colors.text : LightTheme.colors.text}
+                  />
+                  <YAxis 
+                    width={45} 
+                    stroke={darkTheme ? DarkTheme.colors.text : LightTheme.colors.text}
+                  />
                   <Bar dataKey='produced' name="Produkcja" fill={mainColors.pink}/>
                   <Bar dataKey='received' name="Pobrane (1.8.0)" fill={mainColors.blue}/>
                   <Bar dataKey='sent' name="Wysłane (2.8.0)" fill={mainColors.green}/>
-                  <Tooltip contentStyle={{backgroundColor: 'rgba(0,0,0,0.8)'}} itemStyle={{backgroundColor: 'rgba(0,0,0,0.8)'}}/>
+                  <Tooltip 
+                    position={{ x: 50, y: 0 }}
+                    cursor={{fill: 'rgba(0,0,0,0.5)'}} 
+                    contentStyle={{
+                      color: darkTheme ? DarkTheme.colors.background : LightTheme.colors.background, 
+                      backgroundColor: darkTheme ? DarkTheme.colors.contrast : LightTheme.colors.contrast, 
+                      border: 0}} 
+                      itemStyle={{ 
+                        backgroundColor: darkTheme ? DarkTheme.colors.contrast : LightTheme.colors.contrast
+                    }}  
+                    wrapperStyle={{outline: 0}}
+                  />
                 </BarChart>
               </ResponsiveContainer>
             </DataItemBigMenu>
@@ -152,12 +169,27 @@ const Home = ({darkTheme}) => {
             <DataItem>
               <span className="header">Wydajność instalacji</span>
               <ResponsiveContainer height="80%" width="80%">
-                <BarChart data={years_data} margin={{left: -25}}>
+                <BarChart data={years_data} >
                     <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" fontSize={12} stroke={darkTheme ? DarkTheme.colors.text : LightTheme.colors.text}/>
-                    <YAxis domain={[.8, 1]} fontSize={12} stroke={darkTheme ? DarkTheme.colors.text : LightTheme.colors.text}/>
-                    <Bar dataKey='uv'  fill={mainColors.pink}/>
-                    <Tooltip/>
+                    <XAxis 
+                      dataKey="name" 
+                      fontSize={12} 
+                      stroke={darkTheme ? DarkTheme.colors.text : LightTheme.colors.text}
+                    />
+                    <YAxis 
+                      tickFormatter={tick => `${tick}%` }
+                      ticks={[80, 90, 100, 110, 120]}
+                      width={40} 
+                      domain={[80, 120]} 
+                      fontSize={12} 
+                      stroke={darkTheme ? DarkTheme.colors.text : LightTheme.colors.text}
+                    />
+                    <Bar 
+                      dataKey='uv' 
+                      name="asd" 
+                      fill={mainColors.pink} 
+                      label={{position: 'top', fontSize: 12, stroke: darkTheme ? DarkTheme.colors.text : LightTheme.colors.text}}
+                    />
                 </BarChart>
               </ResponsiveContainer>
             </DataItem>

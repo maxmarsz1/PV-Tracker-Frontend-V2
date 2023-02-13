@@ -5,10 +5,41 @@ export const DataWrapper = styled.div`
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     gap: 30px;
+    height: 80%;
     width: 90%;
     aspect-ratio: 16/9;
-    margin: 3rem;   
+`
 
+export const DataLegend = styled.div`
+    ul{
+        list-style: none;
+        display: flex;
+    }
+
+    ul li{
+        margin: 0 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    li:before{
+        content: '';
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+    }
+
+    li:nth-child(1):before{
+        background-color: ${({theme}) => theme.mainColors.pink};
+    }
+    li:nth-child(2):before{
+        background-color: ${({theme}) => theme.mainColors.blue};
+    }
+    li:nth-child(3):before{
+        background-color: ${({theme}) => theme.mainColors.green};
+    }
 `
 
 export const DataInfo = styled.div`
@@ -35,6 +66,12 @@ export const DataInfo = styled.div`
             justify-content: center;
             align-items: center;
             border: 3px solid ${({theme}) => theme.colors.text};
+            cursor: pointer;
+            transition: .3s all;
+        }
+
+        span:hover{
+            border: 3px solid ${({theme}) => theme.mainColors.pink};
         }
 
         img{
@@ -46,6 +83,7 @@ export const DataInfo = styled.div`
         display: flex;
         flex-direction: row;
         font-size: .5rem;
+        height: 100%;
         
         div.titles, div.data{
             display: flex;

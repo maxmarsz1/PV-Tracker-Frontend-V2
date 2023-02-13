@@ -6,6 +6,7 @@ export const mainColors = {
 
 export const LightTheme = {
     colors: {
+        contrast: 'black',
         text: '#6D6D6D',
         background: '#fff',
         background2: '#fff',
@@ -17,6 +18,7 @@ export const LightTheme = {
 
 export const DarkTheme = {
     colors: {
+        contrast: 'white',
         text: '#FBFBFB',
         background: '#404040',
         background2: '#636363',
