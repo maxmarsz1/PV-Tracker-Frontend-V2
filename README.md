@@ -1,5 +1,5 @@
 # PV Statistics Tracker
-App designed for PV users, who are interested how their investment is doing. My second Rest Framework and ReactJS project, on which I want to keep working till it becomes client-ready app.
+App designed for PV users, who are interested how their investment is doing. My second Rest Framework and ReactJS project.
 
 ## Disclaimer! It's only design with stock data, there aren't any connections to the backend made yet.
 
