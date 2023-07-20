@@ -5,7 +5,7 @@ App designed for PV users, who are interested how their investment is doing. My 
 
 ## Project preview
 Main Page
-Light:
-![Preview Light](https://github.com/PIayer69/PV-Tracker-Frontend-V2/blob/main/preview/preview_dark.png?raw=true)
 Dark:
+![Preview Light](https://github.com/PIayer69/PV-Tracker-Frontend-V2/blob/main/preview/preview_dark.png?raw=true)
+Light:
 ![Preview Dark](https://github.com/PIayer69/PV-Tracker-Frontend-V2/blob/main/preview/preview_light.png?raw=true)
